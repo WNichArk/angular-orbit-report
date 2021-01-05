@@ -1,0 +1,22 @@
+<h3>Orbit Report</h3>
+<table>
+   <tr class="header-row">
+      <th (click) = "sort('name')" class="sortable">Name</th>
+      <th (click) = "sort('type')" class="sortable">Type</th>
+      <th>Operational</th>
+      <th>Orbit Type</th>
+      <th>Launch Date</th>
+   </tr>
+<tr *ngFor="let sat of sats">
+    <td>{{sat.name}}</td>
+    <td *ngIf="!sat.shouldShowWarning(); else warningTd">{{sat.type}}</td>
+    <td>{{sat.operational}}</td>
+    <td>{{sat.orbitType}}</td>
+    <td>{{sat.launchDate}}</td>
+
+    <ng-template #warningTd>
+        <td class="warning">{{sat.type}}</td>
+    </ng-template>
+    
+</tr>
+</table>
