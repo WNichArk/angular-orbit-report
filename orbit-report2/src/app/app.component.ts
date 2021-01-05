@@ -7,7 +7,7 @@ import { Satellite } from './satellite';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'orbit-report2';
+  title: 'LaunchCode Orbit Report';
   sourceList: Satellite[];
   displayList: Satellite[];
 
@@ -24,7 +24,6 @@ export class AppComponent {
         }
       }.bind(this));
    }.bind(this));
-
    this.displayList = this.sourceList;
 
  }

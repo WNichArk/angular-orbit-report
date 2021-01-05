@@ -9,14 +9,11 @@
    </tr>
 <tr *ngFor="let sat of sats">
     <td>{{sat.name}}</td>
-    <td *ngIf="!sat.shouldShowWarning(); else warningTd">{{sat.type}}</td>
+    <td [class.warning] ="sat.shouldShowWarning()">{{sat.type}}</td>
     <td>{{sat.operational}}</td>
     <td>{{sat.orbitType}}</td>
     <td>{{sat.launchDate}}</td>
 
-    <ng-template #warningTd>
-        <td class="warning">{{sat.type}}</td>
-    </ng-template>
-    
+  
 </tr>
 </table>
